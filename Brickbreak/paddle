@@ -1,0 +1,81 @@
+//  Class author:  Everett
+//  Date created:  12/5/24
+//  General description: Creates paddle class that can move left/right
+import java.awt.*;
+
+public class Paddle {
+
+
+
+	private int height;
+	
+	private int velocity;
+	private int xPos;
+	private int yPos;
+	private int width;
+	
+	
+	public Paddle(int x, int y, int w, int h) {
+		xPos = x;
+		yPos = y;
+		height = h;
+		width = w;
+	}
+
+
+	//  Pre-condition: Needs an instance of the Graphics class as a parameter to be sent as a parameter.
+	//  Post-condition: Redraws the instance with the xPosition/yPosition and the width/height. 
+	public void draw(Graphics f) {
+
+		
+
+		f.setColor(Color.white);
+		f.fillRect(xPos, yPos, width, height);
+	}
+
+
+	
+	public int getWidth() {
+		return width;
+	}
+	public void setX(int v) {
+		xPos = v;
+	}
+	public int getX() {
+		return xPos;
+	}
+
+	public int getY() {
+		return yPos;
+	}
+	
+
+	public int getHeight() {
+		return height;
+	}
+
+	public int getVelocity() {
+		return velocity;
+	}
+	public void addVelocity(int increment) {
+		velocity = increment;
+	}
+	
+	
+
+
+
+	
+
+	public void setVelocity(int velo) {
+		velocity = velo;
+	}
+
+	//  Pre-condition: None
+	//  Post-condition: Adds the velocity to xPos
+	public void move() {
+		xPos += velocity;
+	}
+
+	
+}
